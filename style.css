@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("media/geometry-1044090_1280_edit.jpg");
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}    
+
+main {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    flex: 1;
+}    
+
+header, footer {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+    padding: 0.67em 0 0.25em 0;
+}
+
+h1 span {
+    background: linear-gradient(90deg, white, cornflowerblue, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+}
+
+h1 span span {
+    background: linear-gradient(90deg, cornflowerblue, white, orange);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    display: inline-block;
+    transform-origin: 53% 57% 0;
+    animation-name: orbspin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes orbspin {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+header p {
+    margin: 0;
+    padding: 0 0 0.75em 0;
+    font-weight: 600;
+    font-size: 1.25em;
+    font-variant-caps: all-small-caps;
+}
+
+h2 span {
+    background: linear-gradient(90deg, orange, cornflowerblue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#testimonial-list {
+    list-style-type: none;
+    padding: 0 1em;
+}
+
+figure {
+    margin: 0 0 1em 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1em;
+}
+
+blockquote p:first-child::before, blockquote p:last-child::after {
+    font-weight: 600;
+}
+
+blockquote p:first-child {
+    margin-top: 0;
+}
+
+blockquote p:first-child::before {
+    content: open-quote;
+}
+
+blockquote p:last-child::after {
+    content: close-quote;
+}
+
+blockquote {
+    margin: 0 0 1em 0;
+}
+
+figcaption {
+    margin: 0 2.5em;
+    font-weight: 600;
+}
+
+footer p {
+    margin: 0;
+    padding: 0.67em 0;
+    font-weight: 600;
+}
