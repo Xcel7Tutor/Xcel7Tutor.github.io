@@ -53,7 +53,7 @@ h1 span span {
     display: inline-block;
     transform-origin: 53% 57% 0;
     animation-name: orbspin;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-iteration-count: infinite;
 }
 
