@@ -77,22 +77,31 @@ header p {
     font-variant-caps: all-small-caps;
 }
 
+li {
+    margin-bottom: 0.1em;
+}
+
 #quote-background {
     position: fixed;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 1s, opacity 1s;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
     background: black;
-    opacity: 0.5;
     z-index: 1;
     cursor: pointer;
 }
 
 #quote-text {
     position: fixed;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 1s, opacity 1s;
     
     /*top: 1em;
     right: 2em;
@@ -153,6 +162,10 @@ header p {
     border-color: transparent #555 transparent transparent;
 }*/
 
+.preload * {
+    transition: none !important;
+}
+
 h2 span {
     background: linear-gradient(90deg, orange, cornflowerblue);
     background-clip: text;
@@ -194,6 +207,111 @@ blockquote {
 figcaption {
     margin: 0 2.5em;
     font-weight: 600;
+}
+
+#testimonial-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#testimonial-form {
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 1s, opacity 1s;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#testimonial-form.show {
+    visibility: visible;
+    opacity: 1;
+    /*animation-duration: 1s;
+    animation-name: fadein;
+    animation-fill-mode: forwards;*/
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#testimonial-form form {
+    border: aliceblue 2px solid;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+
+#testimonial-form form p {
+    color: white;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: calc(100% - 145px);
+    height: 20vh;
+    vertical-align: top;
+}
+
+#testimonial-form form div {
+    margin-bottom: 2px;
+}
+
+#testimonial-form form div label {
+    display: inline-block;
+    width: 140px;
+    color: white;
+}
+
+#first-name {
+    margin-right: 2em;
+}
+
+#testimonial-form form div:first-child {
+    white-space: nowrap;
+}
+
+#testimonial-form form div:first-child #response {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    #testimonial-form form div:first-child #response {
+        display: block;
+    }
+    #first-name {
+        margin-right: 0em;
+    }
+}
+
+#last-initial {
+    width: 20px;
+}
+
+#testimonial-form form div:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+#testimonial-form form div:last-child button {
+    margin-top: 0.5em;
 }
 
 footer p {

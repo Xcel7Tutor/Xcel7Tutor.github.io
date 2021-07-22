@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
-<body>
+<body class="preload">
     <header>
         <h1>Welcome to <span>Xcel7Tut<span>o</span>r</span></h1>
         <p>1 on 1 in-home Maths Tutoring</p>
@@ -87,14 +87,78 @@
                     <figcaption>&mdash; Vicky F., <i>Marangaroo</i></figcaption>
                 </figure>
             </li>
+
+            <li>
+                <figure>
+                    <blockquote>
+                        <p>My year 10 son had been experiencing difficulties in understanding maths concepts for a few years.  We reached out to Henry to assist us in tutoring him for the latter months of year 10 and for preparation for ATAR.  Henry has been able to turn his marks and understanding around so that he is confidently passing exams and doing well above his class average.  Henry has helped my son to learn essential maths concepts and more importantly, to retain them.  Thankyou Henry!</p>
+                    </blockquote>
+                    <figcaption>&mdash; Marilyn Z., <i>Bedford</i></figcaption>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <blockquote>
+                        <p>Before I started getting session’s with Henry I was a struggling year 10 mathematics applications student barely scraping the required prerequisite for year 11 ATAR math. I found surface area extremely difficult along with problem solving in which I felt hopeless and depressed that none of my school teacher’s could provide me with the help I needed. After many failed test results or borderline passing results my mum and I decided enough was enough as the teachers did not give me the required support that I needed to succeed. We decided a tutor was the best option for me to get one on one teaching with the tutor only focusing on my strengths and weaknesses rather than worrying about 30 other ATAR students. After my first lesson with Henry I was very surprised on how much progress we had already made. His ability to figure out the way in which I learn and then apply a perfect explanation that he knows I will understand amazed me and stood out amongst all the teachers I’ve had in the past throughout my schooling. Henry’s preparation before each lesson is also outstanding as he always comes prepared and on time. My results since getting Henry as a tutor amazed me the most, I am averaging around 70 percent which is an outstanding improvement compared to my old 43 percent year 10 average. I am a much more confident learner when it comes to mathematics now and after 3 years of teachers trying to explain surface area to me, Henry managed to explain it to me in only just 2 lessons. If you are looking for a tutor and struggling similar to me when I was in year 10 failing the course I one hundred percent recommend Henry as a tutor option as I am sure just like he did for me he will make mathematics a fun and easier subject for you to master!</p>
+                    </blockquote>
+                    <figcaption>&mdash; Josh Z., <i>Bedford</i></figcaption>
+                </figure>
+            </li>
         </ul>
+
+        <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+        <!--<div id="testimonial-button-wrapper">
+            <button onclick="showhideForm();">Add Testimonial</button>
+        </div>-->
+
+        <div id="testimonial-form">
+            <!--action="https://getform.io/f/5ac98b01-2c04-452d-9ad9-3dbcec5ac557"-->
+            <form  method="POST" target="dummyframe" onsubmit="formsubmit();">
+                <div>
+                    <label for="first-name">First name: </label>
+                    <input type="text" id="first-name" name="first-name">
+                    <br id="response">
+                    <label for="last-initial">Last name initial: </label>
+                    <input type="text" id="last-initial" name="last-initial">
+                </div>
+
+                <div>
+                    <label for="suburb">Suburb: </label>
+                    <input type="text" id="suburb" name="suburb">
+                </div>
+                
+                <p>
+                    You may leave any of the above fields blank, to stay anonymous
+                </p>
+
+                <br>
+
+                <div>
+                    <label for="testimonial">Testimonial: </label>
+                    <textarea id="testimonial" name="testimonial" required></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" style="margin-right: 0.2em;">Submit</button>
+                    <button type="button" onclick="showhideForm()">Cancel</button>
+                </div>
+            </form>
+            <div hidden>
+                <h2 style="color: white;">Thank you for your review!<br><br>Your comments will be added to the website soon.</h2>
+            </div>
+        </div>
         
         <h3>Enquiries</h3>
-        <p>For enquiries and more information about my students' achievements, please email <a href="mailto:Xcel7Tutor@gmail.com">Xcel7Tutor@gmail.com</a>.</p>
+        <p>For enquiries, please email <a href="mailto:Xcel7Tutor@gmail.com">Xcel7Tutor@gmail.com</a>.</p>
     </main>
 
     <footer>
         <p>© 2021 Xcel7Tutor. All rights reserved. </p>
     </footer>
+    <!-- https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load 
+        chrome bug whyyyyyyyyyyy-->
+    <script> </script>
 </body>
 </html>
