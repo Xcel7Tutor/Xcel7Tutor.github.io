@@ -111,6 +111,7 @@ const testimonialFormThankyou = document.getElementById("testimonial-form-thanky
 
 function showhideForm() {
     testimonialForm.classList.toggle("show");
+    document.getElementById("name").focus();
 }
 
 function formsubmit() {
