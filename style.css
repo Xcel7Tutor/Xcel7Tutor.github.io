@@ -4,6 +4,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-repeat: no-repeat;
@@ -19,12 +23,21 @@ main {
     padding: 8px;
     background: rgba(255, 255, 255, 0.85);
     flex: 1;
-}    
+}
 
 header, footer {
     background-color: rgba(0, 0, 0, 0.25);
     color: white;
     text-align: center;
+}
+
+header img {
+    position: absolute;
+    width: 1.5em;
+    top: 2em;
+    left: 1.5em;
+    color: white;
+    cursor: pointer;
 }
 
 footer {
@@ -33,7 +46,7 @@ footer {
 
 h1 {
     margin: 0;
-    padding: 0.67em 0 0.25em 0;
+    padding: 0.5em 0 0.2em 0;
 }
 
 h1 span {
@@ -78,7 +91,7 @@ header p {
 }
 
 li {
-    margin-bottom: 0.1em;
+    margin-bottom: 0.3em;
 }
 
 #quote-background {
@@ -92,7 +105,7 @@ li {
     width: 100%;
     height: 100%;
     background: black;
-    z-index: 1;
+    z-index: 3;
     cursor: pointer;
 }
 
@@ -121,7 +134,7 @@ li {
     text-align: center;
     
     font-weight: normal;
-    z-index: 2;
+    z-index: 4;
 }
 
 #quote-text b {
@@ -166,11 +179,218 @@ li {
     transition: none !important;
 }
 
-h2 span {
+main h2:first-child {
+    margin: 0;
+}
+
+main h2 span {
     background: linear-gradient(90deg, orange, cornflowerblue);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+}
+
+nav {
+    height: 100%;
+    width: 0;
+    /* width: 20%; */
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 4;
+    background-color: rgb(42, 44, 172); /*2A2CAC*/
+    transition: 0.5s;
+}
+
+nav .closebtn {
+    position: relative;
+    top: 0.5em;
+    left: 0.75em;
+}
+
+nav .closebtn img {
+    width: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    top: 25%; 
+    width: 20%; 
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+nav li {
+    margin-bottom: 1.5em;
+}
+
+nav a {
+    color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    transition: color 0.1s, transform 0.1s, filter 0.1s;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: orange;
+    transform: translateY(-0.1em);
+    filter: drop-shadow(0 0 0.5em white);
+}
+
+nav img {
+    width: 1.5em;
+    margin-right: 0.5em;
+}
+
+#nav-blackout {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+}
+
+#scroll-top-button {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    background: white;
+    border-radius: 15%;
+    border: none;
+    transition-property: visibility, opacity, filter;
+    transition-duration: 0.2s;
+    width: 4em;
+    height: 4em;
+    padding: 0.5em;
+    filter: drop-shadow(0 0 0.2em black);
+}
+
+#scroll-top-button:hover {
+    filter: drop-shadow(0 0 0.75em #2A2CAC);
+}
+
+.carousel {
+    position: relative;
+    /* height: 10em; */
+}
+
+.carousel-slides {
+    /* background: lightgreen; */
+    /* height: 100%; */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slides ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.carousel-slide {
+    /* display: grid; */
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+
+    transition: margin-left 0.5s ease-in-out;
+    height: 30em;
+}
+
+.carousel-slide h2 {
+    color: white;
+    z-index: 1;
+    margin: 10% 10%;
+    /* font-size: xx-large; */
+    /* font-size: 2em; */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.5em;
+    width: 75%;
+    line-height: 1.5;
+    position: absolute;
+}
+
+.carousel-slide h2:before {
+    content: open-quote;
+    position: relative;
+    /* font-size: 2em; */
+}
+
+.carousel-slide h2:after {
+    content: close-quote;
+    /* font-size: 2em; */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .carousel-slide button {
+    position: absolute;
+    margin: 20em 12em;
+    z-index: 2;
+} */
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    /* height: 10%; */
+    transform: translateY(-50%);
+    font-size: 32pt;
+    line-height: 32pt;
+    color: blue;
+    z-index: 2;
+}
+
+.carousel-button:nth-last-of-type(1) {
+    right: 0;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#student-school-grid {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    #student-school-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#student-school-grid img {
+    max-width: 100%;
+    object-fit: cover;
+    transition: transform 0.25s;
+    
+    /* grid-template-rows: repeat(4, 1fr); */
+    /* grid-template-columns: 5vw; */
+    /* grid-gap: 1em; */
+}
+
+#student-school-grid img:hover {
+    transform: translateY(-0.5em);
 }
 
 #testimonial-list {
@@ -233,7 +453,7 @@ figcaption {
     align-items: center;
 }
 
-#testimonial-form.show {
+#testimonial-form.show, #nav-blackout.show, #scroll-top-button.show {
     visibility: visible;
     opacity: 1;
     /*animation-duration: 1s;
@@ -265,7 +485,8 @@ figcaption {
 
 textarea {
     box-sizing: border-box;
-    width: calc(100% - 145px);
+    width: 100%;
+    /* width: calc(100% - 0px); */
     height: 20vh;
     vertical-align: top;
 }
@@ -276,7 +497,7 @@ textarea {
 
 #testimonial-form form div label {
     display: inline-block;
-    width: 140px;
+    width: 164px;
     color: white;
 }
 
@@ -304,6 +525,19 @@ textarea {
 #last-initial {
     width: 20px;
 }
+
+/* #maths-dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition-property: visibility, opacity;
+    transition-duration: 0.5s;
+    width: 113px;
+}
+
+#maths-dropdown.show {
+    visibility: visible;
+    opacity: 1;
+} */
 
 #testimonial-form form div:last-child {
     display: flex;

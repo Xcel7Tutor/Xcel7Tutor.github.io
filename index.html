@@ -10,16 +10,84 @@
     <script src="main.js" defer></script>
 </head>
 <body class="preload">
+    <nav>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="media/icons/times.svg"></a>
+        <ul>
+            
+            <li><a href="#section-about" onclick="closeNav()"><img src="media/icons/grin-beam.svg">About</a></li>
+            <li><a href="#section-students" onclick="closeNav()"><img src="media/icons/user-graduate.svg">Students</a></li>
+            <li><a href="#testimonial-header" onclick="closeNav()"><img src="media/icons/comment.svg">Testimonials</a></li>
+            <li><a href="#section-enquiries" onclick="closeNav()"><img src="media/icons/mail-bulk.svg">Enquiries</a></li>
+        </ul>
+    </nav>
+
+    <div id="nav-blackout" onclick="closeNav()"></div>
+
     <header>
-        <h1>Welcome to <span>Xcel7Tut<span>o</span>r</span></h1>
-        <p>1 on 1 in-home Maths Tutoring</p>
+        <img src="media/icons/bars.svg" onclick="openNav()">
+        <h1><span>Xcel7Tut<span>o</span>r</span></h1>
+        <p>in-your-home Maths Tutoring</p>
     </header>
 
     <div id="quote-background" onclick="hideOverlay()"></div>
     <p id="quote-text">test text</p>
-        
-    </div>
 
+    <button id="scroll-top-button"onclick="scrollToTop();" title="Go to top">
+        <img src="media/icons/chevron-circle-up.svg">
+    </button>
+
+    <div class="carousel">
+        <div class=carousel-slides>
+            <ul>
+                <li class="carousel-slide" style="margin-left: 0;">
+                    <h2>&#8230; Her skills improved so much &#8230; <br>Would highly recommend him for tutoring &#8230;</h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/1_dianella.jpg">
+                </li>
+                <li class="carousel-slide" id="cslide-2">
+                    <h2>&#8230; Henry has been a great help to my son &#8230; <br>I would highly recommend his services &#8230;</h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/2_dayton_800px.jpg">
+                </li>
+                <li class="carousel-slide">
+                    <h2>&#8230; Henry was a god send to me &#8230; <br>my son used to hate maths till Henry came into the picture!</h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/3_marangaroo.jpg">
+                </li>
+                <li class="carousel-slide">
+                    <h2>&#8230; Henry has been able to turn his marks and understanding around &#8230; <br>doing well above his class average &#8230; </h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/4_bedford.jpg">
+                </li>
+                <li class="carousel-slide">
+                    <img src="media/carousel/Maths report 100.JPG" style="object-fit: contain;">
+                </li>
+                <li class="carousel-slide">
+                    <h2>&#8230; His ability to figure out the way in which I learn and then apply a perfect explanation that he knows I will understand amazed me &#8230; <br>I one hundred percent recommend Henry as a tutor &#8230; </h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/5_bedford.jpg">
+                </li>
+                <li class="carousel-slide">
+                    <h2>&#8230; already we have seen tremendous improvements in his maths skills &#8230; <br>We are very happy to have sought out Henry and highly recommend him to anyone &#8230; </h2>
+                    <!-- <button>View full testimonial &xrarr;</button> -->
+                    <img src="media/carousel/6_duncraig.jpg">
+                </li>
+            </ul>
+        </div>
+        <button class="carousel-button" onclick="prevSlide()">&lsaquo;</button>
+        <button class="carousel-button" onclick="nextSlide()">&rsaquo;</button>
+
+        <div class="carousel-nav">
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(0)" checked></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(1)"></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(2)"></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(3)"></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(4)"></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(5)"></input>
+            <input type="radio" class="carousel-nav-button" name="carousel-selector" onclick="selectSlide(6)"></input>
+        </div>
+    </div>
+    
     <main>
         <h2><span>Maths is fun!</span></h2>
         <ul>
@@ -27,10 +95,10 @@
             <li>Would you like to boost your child’s chances of winning a Scholarship or a placement in Selective Schools?</li>
             <li>Would you like your child to win the <b>A</b>ustralian <b>M</b>athematics <b>C</b>ompetition (AMC) BEST IN SCHOOL title?</li>
             <li>Would you like your child to win the <i>Highest Individual Score</i> trophy in the <b>A</b>ustralasian <b>P</b>roblem <b>S</b>olving <b>M</b>athematical <b>O</b>lympiads (APSMO) competition?</li>
-            <li>Would you like your child to score 80% in the Year <u>10</u> Maths assessment test, while still in Primary?</li>
+            <li>Would you like your child to score 80% in the ACER Year <u>10</u> Maths assessment test, while still in Primary?</li>
         </ul>
 
-        <p>
+        <p id="section-about">
             Hi, my name is Henry. I am a retired Engineer (graduated from UWA). I can help your kids achieve those goals.
         </p>
         <p>
@@ -40,9 +108,9 @@
             I can help them perform to their highest potential; be the best they can be! I will teach students various skills such as: how to go about solving problems, logical reasoning, lateral thinking, and analysing problems systematically etc., all of which are especially important in Maths competitions and Scholarship tests.
         </p>
 
-        <p>My students from: </p>
+        <h3 id="section-students">My students</h3>
         
-        <ul>
+        <!-- <ul>
             <li>Edith Cowan University (ECU)</li>
             <li>Servite College</li>
             <li>Shenton College</li>
@@ -55,7 +123,26 @@
             <li>Carine Senior High School</li>
             <li>St. Andrew’s Grammar School</li>
             <li>Emmanuel Christian Community School (ECCS)</li>
-        </ul>
+        </ul> -->
+        <div id="student-school-grid">
+            <img src="media/school-logos/ECU.png">
+            <img src="media/school-logos/Servite College.png">
+            <img src="media/school-logos/Shenton College.jpg">
+            <img src="media/school-logos/Chisholm.png">
+            <img src="media/school-logos/JSR.png">
+            <img src="media/school-logos/Morley SHS.png">
+            <img src="media/school-logos/Churchlands SHS.png">
+            <img src="media/school-logos/Ashdale Primary.jpg">
+            <img src="media/school-logos/Warwick SHS.jpg">
+            <img src="media/school-logos/Carine SHS.jpg">
+            <img src="media/school-logos/St Andrews.png">
+            <img src="media/school-logos/Emmanuel Christian Community School.png">
+            <img src="media/school-logos/Australian Islamic.png">
+            <img src="media/school-logos/Ashdale Secondary.jpg">
+            <img src="media/school-logos/Rossmoyne SHS.png">
+            
+            <!-- <img src="media/school-logos/ECU.png"> -->
+        </div>
 
         <h3 id="testimonial-header">Testimonials</h3>
         <ul id="testimonial-list">
@@ -105,6 +192,16 @@
                     <figcaption>&mdash; Josh Z., <i>Bedford</i></figcaption>
                 </figure>
             </li>
+
+            <li>
+                <figure>
+                    <blockquote>
+                        <p>My 15-year-old son has had Henry as a maths tutor now for just over 2 months and already we have seen tremendous improvements in his maths skills. Not only is our son getting great grades, but Henry has instilled confidence in his abilities and a positive attitude towards maths.</p>
+                        <p>Henry is a great guy, with loads of energy. He seems to have the knack to be able to communicate in a fun and very clear way, and really gets our boy prepared for up-and-coming tests and assessments. He seems incredibly patient and very kind. We are very happy to have sought out Henry and highly recommend him to anyone whose child needs a boost in maths.</p>
+                    </blockquote>
+                    <figcaption>&mdash; Angela F., <i>Duncraig</i></figcaption>
+                </figure>
+            </li>
         </ul>
 
         <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
@@ -127,6 +224,24 @@
                     <input type="email" id="email" name="email" required>
                 </div>
 
+                <div>
+                    <label for="suburb">Suburb: </label>
+                    <input type="text" id="suburb" name="suburb" required>
+                </div>
+                
+                <div>
+                    <label for="year-level">Student's Year Level: </label>
+                    <input type="text" id="year-level" name="year-level" required>
+                    <!-- <input type="number" id="year-level" name="year-level" min="1" max="12" oninput="toggleMathsDropdown()" required> -->
+                    <!-- <select id="maths-dropdown" name="maths-dropdown">
+                        <option>General</option>
+                        <option>Applications</option>
+                        <option>Methods</option>
+                        <option>Specialist</option>
+                    </select> -->
+                </div>
+
+
                 <br>
 
                 <div>
@@ -144,8 +259,8 @@
             </div>
         </div>
         
-        <h3>Enquiries</h3>
-        <p>For enquiries, please email <a href="mailto:Xcel7Tutor@gmail.com">Xcel7Tutor@gmail.com</a> or use our <a href="javascript:;" onclick="showhideForm();">contact form here</a>.</p>
+        <h3 id="section-enquiries">Enquiries</h3>
+        <p>Please email <a href="mailto:Xcel7Tutor@gmail.com">Xcel7Tutor@gmail.com</a> or use our <a href="javascript:;" onclick="showhideForm();">contact form here</a>.</p>
     </main>
 
     <footer>

@@ -1,4 +1,4 @@
-window.onload = () => {
+﻿window.onload = () => {
     document.body.classList.remove("preload");
 }
 // https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load
@@ -24,7 +24,7 @@ const quotes = [
     "<b>M</b>istakes <b>A</b>llow <b>T</b>hinking to <b>H</b>appen",
     "Problems are meant to be <b>simplified</b>, not to be <b>complicated</b>",
     "I was good at Maths before they decided to mix the alphabet into it",
-    "Mathematics of Life: Life + Laughter x Love &mdash; Hate = Happiness",
+    "Mathematics of Life:  Life + Laughter x Love - Hate = Happiness",
     "Arithmetic is being able to count up to twenty without taking off your shoes &mdash; Mickey Mouse",
     "One should study Mathematics simply because it helps to arrange one's ideas &mdash; M.W. Lomonossow",
     "The difference between a Mathematician and politician, a Mathematician tries to say the most in the least number of words, the politician the opposite",
@@ -67,13 +67,56 @@ const quotes = [
     "You can be good at Maths in school and still hate it &mdash; A.D. Aliwat",
     "Don't trust banks, trust Maths &mdash; Santosh Kalwar",
     "I'm into Maths the way my nine-year-old self was into skateboarding. I talk about it a lot, and I think about it a lot, but I can't actually, like, do it &mdash; John Green",
-    "I did the Math. (I presume Americans don't pluralise Mathematics because they only plan to do it once &mdash; Sheridan Jobbins",
+    "I did the Math (I presume Americans don't pluralise Mathematics because they only plan to do it once) &mdash; Sheridan Jobbins",
     "Maths anxiety is worst than a regular check up at the dentist &mdash; Charmaine J. Forde",
     "1337% of 𝝅 ≈ 42 &mdash; Mario J. Lucero",
-
-
-
+    "Mathematics education is much more complicated than you expected, even though you expected it to be more complicated than you expected &mdash; Edward Griffith Begle",
+    "And what he meant was that Maths wasn't like life because in life there are no straightforward answers in the end &mdash; Mark Haddon",
+    "Mathematicians deal with large numbers sometimes, but never in their income &mdash; Isaac Asimov",
+    "As the world continually multiplies, are we in a generation where people are divided, or people are equal? &mdash; Anthony Liccione",
+    "What’s a Maths teacher’s favorite kind of tree? Geometry",
+    "Parallel lines have so much in common … It’s a shame they’ll never meet",
+    "What shape is usually waiting for you inside a Starbucks? A line",
+    "Why doesn’t anybody talk to circles? Because there’s no point",
+    "Why did the Mathematician spill all of his food in the oven? The directions said, “Put it in the oven at 180°”",
+    "why was the Maths class so long? The teacher kept going off on a tangent",
+    "Why did the student do multiplication problems on the floor? The teacher told him not to use tables",
+    "How do you solve any equation? Multiply both sides by zero",
+    "Which tables do you not have to learn? Dinner tables",
+    "Surgeon: Nurse, I have so many patients. Who do I work on first? Nurse: Simple, follow the order of operations",
+    "I met a Maths teacher who had 12 children. She really knows how to multiply!",
+    "Why was the student confused when he went from English class to Maths class? Because he was taught that a double negative in English is bad, but in Maths, it’s a positive",
+    "I hired an odd man to do eight jobs for me. When I got back, he’d only done jobs one, three, five, and seven",
+    "What are ten things you can always count on? Your fingers",
+    "There are three kinds of people in this world. Those who can count and those who can’t",
+    "How do you make seven an even number? Remove the S",
+    "Which king loved fractions? Henry the ⅛",
+    "There’s a fine line between a numerator and a denominator… But only a fraction would understand",
+    "How do we know the fractions, x/c, y/c, and z/c, are all in Europe? They’re all over c’s!",
+    "Why did the student get upset when her teacher called her average? It was a <b>mean</b> thing to say",
+    "Why is statistics never anyone’s favorite subject? It’s just average",
+    "Why did Pi get its driver’s license revoked? Because it didn’t know when to stop",
+    "You should never start a conversation with Pi. It’ll just go on and on forever",
+    "I poured root beer into a square cup. Now I have beer",
+    "Why do plants hate Maths? Because it gives them square roots",
+    "Why can’t a nose be 12 inches long? Because then it would be a foot",
+    "Who’s the king of the pencil case? The ruler",
+    "When you keep missing Maths class, it starts to really add up",
+    "Why was the Fraction worried about marrying the Decimal? Because she would have to convert",
+    "Why was the Equal Sign so humble? Because she knew she wasn’t greater than or less than anyone else",
+    "Dear Algebra, stop trying to find your x. They’re never coming back - don’t ask y",
+    "How do you stay warm in any room? Just huddle in the corner, where it’s always 90 degrees",
+    "Why did the triangle make the basketball team? It always made three-pointers",
+    "Did you hear about the statistician who drowned crossing the river? It was 1 meter deep - on average",
+    "I’ll do Algebra, and I’ll do Trigonometry. I’ll even do Statistics. But graphing is where I draw the line!",
+    "The problem with Maths puns is that Calculus jokes are all derivative, Trigonometry jokes are too graphic, Algebra jokes are usually formulaic, and Arithmetic jokes are pretty basic. But I guess the occasional Statistics joke is an outlier",
+    "Why was Algebra so easy for the Romans? X was always 10!",
+    "I would tell you a joke about an infinite line… But it doesn’t have an endpoint",
+    "Have you heard the latest Statistics joke? Probably",
+    "Why shouldn’t you let advanced Maths intimidate you? It’s easy as Pi!",
+    "Why can’t you trust a polynomial to stay the same? They have too many variables."
 ];
+
 var randomNum = -1
 var prevRandomNum = -1
 var debugSpecialLol = false
@@ -106,12 +149,100 @@ function hideOverlay() {
 }
 
 
+const firstCarouselSlide = document.querySelector(".carousel-slide:first-child");
+const maxSlideMargin = document.getElementsByClassName("carousel-slide").length * -100 + 100;
+const numberOfSlides = document.getElementsByClassName("carousel-slide").length;
+const carouselNav = document.getElementsByClassName("carousel-nav-button");
+const carousel = document.getElementsByClassName("carousel")[0];
+let index = 0;
+
+function prevSlide() {
+    // moveToSlide(100);
+    index--;
+    if (index < 0) {
+        index = numberOfSlides - 1;
+    }
+    moveToSlide();
+}
+function nextSlide() {
+    // moveToSlide(-100);
+    index++;
+    if (index == numberOfSlides) {
+        index = 0;
+    }
+    moveToSlide();
+}
+function moveToSlide() {
+    carouselNav[index].checked = true
+    firstCarouselSlide.style.marginLeft = (index * -100).toString() + "%"
+}
+/*function moveToSlide(amount) {
+    let currentMargin = parseInt(firstCarouselSlide.style.marginLeft)
+    if (currentMargin + amount > 0) {
+        margin = maxSlideMargin;
+    } else if (currentMargin + amount < maxSlideMargin) {
+        margin = 0;
+    } else {
+        margin = currentMargin + amount
+    }
+    firstCarouselSlide.style.marginLeft = margin.toString() + "%"
+}*/
+function selectSlide(idx) {
+    index = idx;
+    firstCarouselSlide.style.marginLeft = (index * -100).toString() + "%";
+}
+let carouselAutoRotater = setInterval(nextSlide, 3500);
+carousel.addEventListener("mouseover", () => {
+    clearInterval(carouselAutoRotater);
+});
+carousel.addEventListener("mouseout", () => {
+    carouselAutoRotater = setInterval(nextSlide, 3500);
+});
+
+
+const navigationMenu = document.getElementsByTagName("nav")[0];
+const navigationBlackout = document.getElementById("nav-blackout");
+function openNav() {
+    navigationMenu.style.width = "20em";
+    navigationBlackout.classList.add("show");
+}
+function closeNav() {
+    navigationMenu.style.width = "0%";
+    navigationBlackout.classList.remove("show");
+}
+
+
+const scrollTopButton = document.getElementById("scroll-top-button");
+function scrollToTop() {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+}
+window.onscroll = () => {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        scrollTopButton.classList.add("show");
+    } else {
+        scrollTopButton.classList.remove("show");
+    }
+};
+
+
+
 const testimonialForm = document.getElementById("testimonial-form");
 const testimonialFormThankyou = document.getElementById("testimonial-form-thankyou");
 
 function showhideForm() {
     testimonialForm.classList.toggle("show");
     document.getElementById("name").focus();
+}
+
+const yearLevelSelector = document.getElementById("year-level");
+const mathsDropdown = document.getElementById("maths-dropdown");
+function toggleMathsDropdown() {
+    if (yearLevelSelector.value >= 11) {
+        mathsDropdown.classList.add("show");
+    } else {
+        mathsDropdown.classList.remove("show");
+    }
 }
 
 function formsubmit() {
